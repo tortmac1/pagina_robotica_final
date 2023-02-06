@@ -1,0 +1,283 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Barlow, sans-serif;
+    margin: 0;
+    color: #363636;
+    height: auto;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.background-gris, footer {
+    background-color: #f7f7f7;
+}
+
+/*--------------------------------------------------COLOR-------------------------------------------------------------*/
+
+.text-portada {
+    color: white;
+}
+
+/*------------------------------------------------LINE-HEIGHT---------------------------------------------------------*/
+.copy-beneficio {
+    line-height: 100%;
+}
+
+.copy-portada, .title-portada {
+    line-height: 120%;
+}
+
+.intro {
+    line-height: 150%;
+}
+
+
+/*------------------------------------------------FONT-SIZE-----------------------------------------------------------*/
+
+footer {
+    font-size: 1.1em;
+}
+
+.titulo-beneficio, .text-portada {
+    font-size: 1.2em;
+}
+
+.intro {
+    font-size: 1.5em;
+}
+
+.title-modules, .title-portada {
+    font-size: 2.5em;
+}
+
+
+@media (max-width: 500px) {
+    body {
+        font-size: 12px;
+    }
+
+    .text-portada {
+        margin-top: 7em;
+    }
+
+    .title-modules, .title-portada {
+        font-size: 1.5em;
+    }
+
+    .intro {
+        font-size: 1.2em;
+    }
+}
+
+/*---------------------------------------------TEXT-ALIGN-------------------------------------------------------------*/
+
+.copy-form, .form-module>h2, .form-module>p, .intro, button, .title-modules, footer {
+    text-align: center;
+}
+
+/*------------------------------------------------FLEX------------------------------------------------------------*/
+
+.portada, .beneficios-flex {
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.portada, .beneficios-flex, .intro, .title-modules, footer {
+    padding: 2% 14%;
+}
+
+/*-------------------------------------------------PORTADA------------------------------------------------------------*/
+
+.portada {
+    height: 30em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("https://www.f-covers.com/cover/cute-cat-2-facebook-cover-timeline-banner-for-fb.jpg");
+}
+
+.text-portada {
+    width: 80%;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.title-portada {
+    display: block;
+}
+
+.inherit {
+    position: absolute;
+    top: 2%;
+    left: 14%;
+}
+
+.logo-salle {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+}
+
+#logo-salle {
+    padding-top: 1em;
+    padding-left: 95%;
+}
+
+.title-portada {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/*-----------------------------------------beneficios-----------------------------------------------------------------*/
+
+.beneficio {
+    padding: 5px;
+    width: 330px;
+    display: inline-flex;
+}
+
+.icon-beneficio {
+    width: 6em;
+    margin-right: 1em;
+    height: 6em;
+}
+
+.titulo-beneficio {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+
+/*Extra------------------------------------------------------------------------------------------------------------**/
+
+@media all and (max-width: 1450px) {
+    .beneficios-flex {
+        justify-content: center;
+    }
+}
+
+
+@media all and (max-width: 1310px) {
+    .footer {
+        justify-content: center;
+    }
+}
+
+@media all and (max-width: 1050px) {
+
+    .testimonial-flex, footer {
+        justify-content: center;
+    }
+
+    #portada, .beneficios-flex, .intro, .title-modules, .getup-module, .testimonial-flex, footer {
+        padding: 2% 7%;
+    }
+
+    .portada {
+        justify-content: center;
+        height: 70em;
+    }
+
+    .text-portada {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .portada {
+        height: 50em;
+    }
+
+    .portada, .beneficios-flex {
+        justify-content: center;
+    }
+
+    #logo-salle {
+        width: 200px;
+        height: auto;
+        padding-top: 1em;
+        padding-left: 35%;
+    }
+
+    .portada {
+        height: auto;
+    }
+
+    .text-portada {
+        width: auto;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 7em;
+    }
+
+    .beneficio {
+        width: 100%;
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+    }
+
+    .copy-beneficio {
+        margin-top: 0;
+    }
+}
+
+/*-----------------------------------------amplicacion pantalla-------------------------------------------------------*/
+
+@media (-webkit-max-device-pixel-ratio: 1) {
+    .portada {
+        margin-bottom: 0.1em;
+    }
+}
+
+/*-------------------------------------------animaciones--------------------------------------------------------------*/
+
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 2s;
+}
+
+@keyframes example {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-5%)
+    }
+}
+
+@keyframes example2 {
+    0% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+.beneficio:hover {
+    animation: example 1s forwards;
+}
+
+.beneficio:not(hover) {
+    animation: example2 1s forwards;
+}

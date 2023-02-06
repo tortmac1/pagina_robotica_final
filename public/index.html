@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+
+    <div id="findDetails">
+      <h1>¿Estás seguro de que quieres ver los datos de los servos?</h1>
+      <!-- <h4>ID</h4> -->
+      <!-- <input id="findID" type="text" /> <br /><br /> -->
+      <button id="find">No haga click aquí</button>
+      <h3 id="findName" type="text"></h3>
+      <h3 id="findAge" type="number"></h3>
+      <h3 id="findX" type="number"></h3>
+      <br /><br />
+    </div>
+
+    <script type="module">
+      // TODO: Replace the following with your app's Firebase project configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDvSNuT79jWW7LqyQiWanztaD91dwm_yA0",
+        authDomain: "patata-conector.firebaseapp.com",
+        databaseURL:
+          "https://patata-conector-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "patata-conector",
+        storageBucket: "patata-conector.appspot.com",
+        messagingSenderId: "275986924708",
+        appId: "1:275986924708:web:bd1e088bf13da32f1f9231",
+      };
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; // Check that it worked and returned a function:
+
+      import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+
+      const app = initializeApp(firebaseConfig);
+
+      // Initialize Firebase Authentication and get a reference to the service
+      const auth = getAuth(app);
+
+      const db = getDatabase();
+
+      var findID = document.querySelector("#findID");
+      var findName = document.querySelector("#findName");
+      var findAge = document.querySelector("#findAge");
+
+      var findBtn = document.querySelector("#find");
+
+      function FindData() {
+        const dbref = ref(db);
+
+        get(child(dbref, "users1/status"))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              findName.innerHTML = snapshot.val();
+            } else {
+              alert("No data found");
+            }
+          })
+          .catch((error) => {
+            alert(error);
+          });
+
+
+          get(child(dbref, "users2/status"))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              findAge.innerHTML = snapshot.val();
+            } else {
+              alert("No data found");
+            }
+          })
+          .catch((error) => {
+            alert(error);
+          });
+
+
+          get(child(dbref, "users3/status"))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              findX.innerHTML = snapshot.val();
+            } else {
+              alert("No data found");
+            }
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      }
+
+      
+      findBtn.addEventListener("click", FindData);
+    </script>
+  </body>
+</html>

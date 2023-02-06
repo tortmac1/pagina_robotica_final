@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="googlebot-news" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="googlebot-news" content="nosnippet" />
+    <meta name="author" content="Frogteitor" />
+    <title>3 en ralla</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.salleurl.edu/sites/all/themes/lasalle2016beta/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.salleurl.edu/sites/all/themes/lasalle2016beta/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"
+    />
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+
+  <body>
+    <!-- FIREBASE -->
+    <div id="findDetails">
+      <h1>Find by ID</h1>
+      <input id="findID" type="text" /> <br /><br />
+      <button id="find">FIND</button>
+      <br /><br />
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; // Check that it worked and returned a function:
+      console.log(typeof initializeApp);
+
+      import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+
+      import {
+        getDatabase,
+        ref,
+        child,
+        get,
+      } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+
+      // TODO: Replace the following with your app's Firebase project configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDvSNuT79jWW7LqyQiWanztaD91dwm_yA0",
+        authDomain: "patata-conector.firebaseapp.com",
+        databaseURL:
+          "https://patata-conector-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "patata-conector",
+        storageBucket: "patata-conector.appspot.com",
+        messagingSenderId: "275986924708",
+        appId: "1:275986924708:web:bd1e088bf13da32f1f9231",
+      };
+
+      const app = initializeApp(firebaseConfig);
+
+      // Initialize Firebase Authentication and get a reference to the service
+      const auth = getAuth(app);
+
+      const database = getDatabase();
+      var findBtn = document.querySelector("#find");
+
+      function FindData() {
+        // const x = ref(database);
+        findID.innerHTML = "123";
+        // get(child(x, "users1/status")).then((snapshot) => {
+        //   if (snapshot.exists()) {
+        //     findID.innerHTML = "123";
+        //       // "algo" + snapshot.val();
+        //   } else {
+        //     alert("ERROR");
+        //   }
+        // });
+      }
+
+      findBtn.addEventListener("click", FindData);
+    </script>
+
+    <!--     
+    <h1>"The value for number is: " <span id="myText"></span></h1>
+
+    <section class="portada" id="portada">
+      <div class="inherit">
+        <img
+          class="logo-salle"
+          src="https://image.communication.salleurl.edu/lib/fe5415707c6103757313/m/8/079c19fb-7d84-42eb-98bf-95c50a9897fe.png"
+          height="150"
+          width="436"
+          alt="logo-salle"
+        />
+      </div>
+
+      <section class="text-portada">
+        <h1 class="title-portada">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex.
+        </p>
+      </section>
+    </section>
+
+    <h1>sjsilfjdlfj</h1>
+
+    <section class="intro">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        sed do eiusmod. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod sed do eiusmod. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod sed do eiusmod.
+      </p>
+    </section>
+
+    <section id="testimonial-beneficios" class="beneficios-flex">
+      <div class="beneficio">
+        <img
+          class="icon-beneficio"
+          alt="ben1"
+          src="https://image.communication.salleurl.edu/lib/fe5415707c6103757313/m/8/d3b7fec3-02f2-4022-aee4-1326563a4cfa.png"
+        />
+        <p class="copy-beneficio">
+          <span class="titulo-beneficio">Lorem ipsum</span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod sed do eiusmod.
+        </p>
+      </div>
+
+      <div class="beneficio">
+        <img
+          class="icon-beneficio"
+          alt="ben2"
+          src="https://image.communication.salleurl.edu/lib/fe5415707c6103757313/m/8/5c17dc6b-bf16-4036-abbe-0e12d73db60e.png"
+        />
+        <p class="copy-beneficio">
+          <span class="titulo-beneficio">Lorem ipsum</span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod sed do eiusmod.
+        </p>
+      </div>
+
+      <div class="beneficio">
+        <img
+          class="icon-beneficio"
+          alt="ben3"
+          src="https://image.communication.salleurl.edu/lib/fe5415707c6103757313/m/8/a459bbcc-4504-45ad-88f6-8683630f0ee0.png"
+        />
+        <p class="copy-beneficio">
+          <span class="titulo-beneficio">Lorem ipsum</span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod sed do eiusmod.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <h2>DORO - 2022-2023</h2>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"
+    ></script>
+    <script src="./javascripts/script"></script> -->
+  </body>
+</html>

@@ -1,0 +1,59 @@
+noErrors = false; // poner true para ver la animación de formulario enviado correctamente
+
+const observer = new IntersectionObserver(entries => {
+    // Loop over the entries
+    entries.forEach(entry => {
+        // If the element is visible
+        if (entry.isIntersecting) {
+            // Add the animation class
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+        }
+    });
+});
+
+
+observer.observe(document.querySelector('.intro'));
+observer.observe(document.querySelector('#testimonial-beneficios'));
+// observer.observe(document.querySelector('.title-modules'));
+// observer.observe(document.querySelector('.feature-block'));
+// observer.observe(document.querySelector('#feature-block-2'));
+// observer.observe(document.querySelector('#feature-block-3'));
+// observer.observe(document.querySelector('#title-module-testimonial'));
+// observer.observe(document.querySelector('.testimonio'));
+// observer.observe(document.querySelector('#testimonial-2'));
+
+
+
+// window.addEventListener('scroll', function () {
+//     //on every scroll this funtion will be called
+
+//     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     //This line will get the location on scroll
+
+//     if (scrollTop > lastScrollTop) { //if it will be greater than the previous
+//         navbar.style.top = '0px';
+//         //set the value to the negetive of height of navbar
+//     } else {
+
+//         if (scrollTop == lastScrollTop) {
+//             navbar.style.top = '-230px';
+//         }
+//     }
+
+// });
+
+if(window.innerWidth<550 || screen.width<550){
+    $('.slider-nav').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        focusOnSelect: false
+    });
+}else
+//(window.innerWidth<900 || screen.width<900)
+{
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        focusOnSelect: false
+    });
+}
